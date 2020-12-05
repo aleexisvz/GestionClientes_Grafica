@@ -29,11 +29,6 @@ namespace ProyectoPedido
         /// </summary>
         private void InitializeComponent()
         {
-            this.txtNombre = new System.Windows.Forms.TextBox();
-            this.txtMarca = new System.Windows.Forms.TextBox();
-            this.txtCarpeta = new System.Windows.Forms.TextBox();
-            this.txtUTrabajo = new System.Windows.Forms.TextBox();
-            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
             this.label4 = new System.Windows.Forms.Label();
             this.btnCancel = new System.Windows.Forms.Button();
@@ -45,46 +40,12 @@ namespace ProyectoPedido
             this.label3 = new System.Windows.Forms.Label();
             this.label5 = new System.Windows.Forms.Label();
             this.label6 = new System.Windows.Forms.Label();
+            this.txtNombre = new System.Windows.Forms.TextBox();
+            this.txtMarca = new System.Windows.Forms.TextBox();
+            this.txtCarpeta = new System.Windows.Forms.TextBox();
+            this.txtUTrabajo = new System.Windows.Forms.TextBox();
+            this.txtCantidad = new System.Windows.Forms.TextBox();
             this.SuspendLayout();
-            // 
-            // txtNombre
-            // 
-            this.txtNombre.Location = new System.Drawing.Point(102, 92);
-            this.txtNombre.Name = "txtNombre";
-            this.txtNombre.Size = new System.Drawing.Size(257, 20);
-            this.txtNombre.TabIndex = 0;
-            // 
-            // txtMarca
-            // 
-            this.txtMarca.Location = new System.Drawing.Point(102, 146);
-            this.txtMarca.Name = "txtMarca";
-            this.txtMarca.Size = new System.Drawing.Size(257, 20);
-            this.txtMarca.TabIndex = 1;
-            // 
-            // txtCarpeta
-            // 
-            this.txtCarpeta.Location = new System.Drawing.Point(102, 202);
-            this.txtCarpeta.Name = "txtCarpeta";
-            this.txtCarpeta.Size = new System.Drawing.Size(257, 20);
-            this.txtCarpeta.TabIndex = 2;
-            // 
-            // txtUTrabajo
-            // 
-            this.txtUTrabajo.Location = new System.Drawing.Point(102, 259);
-            this.txtUTrabajo.Name = "txtUTrabajo";
-            this.txtUTrabajo.Size = new System.Drawing.Size(257, 20);
-            this.txtUTrabajo.TabIndex = 3;
-            // 
-            // txtCantidad
-            // 
-            this.txtCantidad.Font = new System.Drawing.Font("Lato Black", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.txtCantidad.ForeColor = System.Drawing.Color.Indigo;
-            this.txtCantidad.Location = new System.Drawing.Point(164, 318);
-            this.txtCantidad.Name = "txtCantidad";
-            this.txtCantidad.Size = new System.Drawing.Size(130, 23);
-            this.txtCantidad.TabIndex = 4;
-            this.txtCantidad.Text = "0";
-            this.txtCantidad.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
             // 
             // label1
             // 
@@ -139,7 +100,7 @@ namespace ProyectoPedido
             // btnUp
             // 
             this.btnUp.Font = new System.Drawing.Font("Lato Black", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnUp.Location = new System.Drawing.Point(296, 319);
+            this.btnUp.Location = new System.Drawing.Point(295, 320);
             this.btnUp.Name = "btnUp";
             this.btnUp.Size = new System.Drawing.Size(21, 22);
             this.btnUp.TabIndex = 12;
@@ -149,7 +110,7 @@ namespace ProyectoPedido
             // btnDown
             // 
             this.btnDown.Font = new System.Drawing.Font("Lato Black", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnDown.Location = new System.Drawing.Point(141, 319);
+            this.btnDown.Location = new System.Drawing.Point(140, 320);
             this.btnDown.Name = "btnDown";
             this.btnDown.Size = new System.Drawing.Size(21, 22);
             this.btnDown.TabIndex = 15;
@@ -211,12 +172,52 @@ namespace ProyectoPedido
             this.label6.TabIndex = 20;
             this.label6.Text = "Compras Hechas";
             // 
+            // txtNombre
+            // 
+            this.txtNombre.Location = new System.Drawing.Point(114, 92);
+            this.txtNombre.Name = "txtNombre";
+            this.txtNombre.Size = new System.Drawing.Size(233, 20);
+            this.txtNombre.TabIndex = 21;
+            // 
+            // txtMarca
+            // 
+            this.txtMarca.Location = new System.Drawing.Point(114, 146);
+            this.txtMarca.Name = "txtMarca";
+            this.txtMarca.Size = new System.Drawing.Size(233, 20);
+            this.txtMarca.TabIndex = 23;
+            // 
+            // txtCarpeta
+            // 
+            this.txtCarpeta.Location = new System.Drawing.Point(114, 202);
+            this.txtCarpeta.Name = "txtCarpeta";
+            this.txtCarpeta.Size = new System.Drawing.Size(233, 20);
+            this.txtCarpeta.TabIndex = 24;
+            // 
+            // txtUTrabajo
+            // 
+            this.txtUTrabajo.Location = new System.Drawing.Point(114, 259);
+            this.txtUTrabajo.Name = "txtUTrabajo";
+            this.txtUTrabajo.Size = new System.Drawing.Size(233, 20);
+            this.txtUTrabajo.TabIndex = 25;
+            // 
+            // txtCantidad
+            // 
+            this.txtCantidad.Location = new System.Drawing.Point(161, 321);
+            this.txtCantidad.Name = "txtCantidad";
+            this.txtCantidad.Size = new System.Drawing.Size(134, 20);
+            this.txtCantidad.TabIndex = 26;
+            // 
             // frmModificarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(458, 435);
+            this.Controls.Add(this.txtCantidad);
+            this.Controls.Add(this.txtUTrabajo);
+            this.Controls.Add(this.txtCarpeta);
+            this.Controls.Add(this.txtMarca);
+            this.Controls.Add(this.txtNombre);
             this.Controls.Add(this.label6);
             this.Controls.Add(this.label5);
             this.Controls.Add(this.label3);
@@ -228,11 +229,6 @@ namespace ProyectoPedido
             this.Controls.Add(this.btnCancel);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label1);
-            this.Controls.Add(this.txtCantidad);
-            this.Controls.Add(this.txtUTrabajo);
-            this.Controls.Add(this.txtCarpeta);
-            this.Controls.Add(this.txtMarca);
-            this.Controls.Add(this.txtNombre);
             this.ForeColor = System.Drawing.Color.MediumSlateBlue;
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmModificarCliente";
@@ -244,15 +240,8 @@ namespace ProyectoPedido
         }
 
         #endregion
-
-        private System.Windows.Forms.TextBox txtNombre;
-        private System.Windows.Forms.TextBox txtMarca;
-        private System.Windows.Forms.TextBox txtCarpeta;
-        private System.Windows.Forms.TextBox txtUTrabajo;
-        private System.Windows.Forms.TextBox txtCantidad;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.Label label4;
-        private System.Windows.Forms.Label txtComprasHechas;
         private System.Windows.Forms.Button btnCancel;
         private System.Windows.Forms.Button btnModificar;
         private System.Windows.Forms.Button btnUp;
@@ -262,5 +251,10 @@ namespace ProyectoPedido
         private System.Windows.Forms.Label label3;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.TextBox txtNombre;
+        private System.Windows.Forms.TextBox txtMarca;
+        private System.Windows.Forms.TextBox txtCarpeta;
+        private System.Windows.Forms.TextBox txtUTrabajo;
+        private System.Windows.Forms.TextBox txtCantidad;
     }
 }

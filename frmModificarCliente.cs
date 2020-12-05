@@ -1,4 +1,5 @@
-﻿using System;
+﻿using Business;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -14,8 +15,6 @@ namespace ProyectoPedido
         public frmModificarCliente()
         {
             InitializeComponent();
-
-            int comprasHechas = 0;
         }
 
         private void btnCancel_Click(object sender, EventArgs e)
@@ -25,14 +24,15 @@ namespace ProyectoPedido
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            if (txtNombre.Text != "" && txtMarca.Text != "" && txtCarpeta.Text != "" && txtUTrabajo.Text != "" && txtComprasHechas.Text != "")
+            if (txtNombre.Text != "" && txtMarca.Text != "" && txtCarpeta.Text != "" && txtUTrabajo.Text != "" && txtCantidad.Text != "")
             {
                 string nombre = txtNombre.Text, marca = txtMarca.Text, carpeta = txtCarpeta.Text, uTrabajo = txtUTrabajo.Text;
                 int comprasHechas = int.Parse(txtCantidad.Text), currentIdClient = Convert.ToInt32(lblID.Text);
 
-                if (Business.Cliente.Update_Cliente(nombre, marca, carpeta, uTrabajo, comprasHechas, currentIdClient))
+                if (Cliente.Update_Cliente(nombre, marca, carpeta, uTrabajo, comprasHechas, currentIdClient))
                 {
                     MessageBox.Show("El cliente se ha modificado satisfactoriamente", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    this.Close();
                 }
             }
             else

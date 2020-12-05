@@ -51,7 +51,7 @@ namespace ProyectoPedido
 
         private void btnPrincipalP_Click(object sender, EventArgs e)
         {
-            
+            openChildForm(new frmPedidos());
             hideSubmenu();
         }
 

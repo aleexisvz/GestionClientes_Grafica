@@ -19,9 +19,11 @@ namespace ProyectoPedido
         {
             InitializeComponent();
             cargarClientes();
+
+            cmbSearch.SelectedIndex = 1;
         }
 
-        private void cargarClientes()
+        public void cargarClientes()
         {
             oList_Clientes = Business.Cliente.Consulta_Cliente();
             if (oList_Clientes != null)
@@ -145,21 +147,27 @@ namespace ProyectoPedido
 
         private void btnDelete_Click(object sender, EventArgs e)
         {
-            int idCliente = Convert.ToInt32(InputDialog.mostrar("Ingrese el ID del cliente que desea eliminar:   "));
-
-            try
+            DialogResult resp = MessageBox.Show("Se eliminará un cliente de la base de datos. Desea continuar?", "ATENCION", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            
+            if(resp == DialogResult.OK)
             {
-                bool ok = Business.Cliente.Delete_Cliente(idCliente);
-                if (ok)
-                    MessageBox.Show("Operación exitosa");
+                int idCliente = Convert.ToInt32(dgvClientes.Rows[dgvClientes.CurrentRow.Index].Cells[0].Value.ToString());
 
-            }
-            catch(Exception ex)
-            {
-                MessageBox.Show("Se ha producido un error: " + ex.Message);
+                try
+                {
+                    bool ok = Business.Cliente.Delete_Cliente(idCliente);
+                    if (ok)
+                        MessageBox.Show("Operación exitosa");
+
+                }
+                catch (Exception ex)
+                {
+                    MessageBox.Show("Se ha producido un error: " + ex.Message);
+                }
+
+                cargarClientes();
             }
 
-            cargarClientes();
         }
 
         private void cmbSearch_SelectedIndexChanged(object sender, EventArgs e)
@@ -173,6 +181,11 @@ namespace ProyectoPedido
             frmModificarCliente modCliente = new frmModificarCliente();
             modCliente.lblID.Text = dgvClientes.Rows[dgvClientes.CurrentRow.Index].Cells[0].Value.ToString();
             modCliente.Show();
+        }
+
+        private void btnActualizar_Click(object sender, EventArgs e)
+        {
+            cargarClientes();
         }
     }
 }
