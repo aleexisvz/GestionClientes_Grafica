@@ -149,7 +149,6 @@ namespace ProyectoPedido
 
             //Seteamos los dateTimePicker
             dtpFechaEntrada.Value = DateTime.Now;
-            dtpFechaConfirmacion.Value = DateTime.Now;
 
             cmbTiempoEstimado_SelectedIndexChanged(sender, e);
         }
@@ -221,6 +220,46 @@ namespace ProyectoPedido
                 //Sumamos al total
                 Total += precio;
                 lblTotal.Text = Convert.ToString(Total);
+            }
+        }
+
+        private void btnAgregar_Click(object sender, EventArgs e)
+        {
+            //DECLARACIONES
+            string usuario = txtUsuario.Text, observaciones = rtbObservaciones.Text;
+            float deuda = Convert.ToSingle(txtDeuda.Text);
+            float monto = Convert.ToSingle(Total);
+            bool ok = false;
+
+            string productos = "";
+            string encargos = "";
+            
+            DateTime fechaEntrada = dtpFechaEntrada.Value;
+            DateTime fechaEntrega = dtpFechaEntrega.Value;
+
+            //Seteamos productos
+            foreach (var p in lbProductos.Items)
+            {
+                productos += " | " + p;
+            }
+
+            //Seteamos encargos
+            foreach (var en in lbEncargos.Items)
+            {
+                encargos += " | " + en;    
+            }
+
+            ok = Business.Pedido.Insert_Pedido(usuario, fechaEntrada, fechaEntrega, productos, encargos, observaciones, deuda, monto);
+
+            if (ok)
+            {
+                MessageBox.Show("Se ha insertado el pedido correctamente.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+
+                this.Close();
+            }
+            else
+            {
+                MessageBox.Show("Ha ocurrido un error al intentar insertar un pedido.", "La operacion ha fallado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
     }

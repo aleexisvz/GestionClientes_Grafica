@@ -59,13 +59,13 @@ namespace ProyectoPedido
 
                 if (ok)
                 {
-                    MessageBox.Show("Se ha insertado el cliente correctamente.", "Operaciòn exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
+                    MessageBox.Show("Se ha insertado el cliente correctamente.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
                     
                     this.Close();
                 }
                 else
                 {
-                    MessageBox.Show("Ha ocurrido un error al intentar insertar un cliente.", "La operaciòn ha fallado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    MessageBox.Show("Ha ocurrido un error al intentar insertar un cliente.", "La operacion ha fallado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
             }
             else

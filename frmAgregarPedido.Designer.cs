@@ -76,10 +76,11 @@ namespace ProyectoPedido
             this.txtEncargo = new System.Windows.Forms.TextBox();
             this.label13 = new System.Windows.Forms.Label();
             this.rtbObservaciones = new System.Windows.Forms.RichTextBox();
-            this.dtpFechaConfirmacion = new System.Windows.Forms.DateTimePicker();
-            this.label19 = new System.Windows.Forms.Label();
             this.dtpFechaEntrega = new System.Windows.Forms.DateTimePicker();
             this.label20 = new System.Windows.Forms.Label();
+            this.label21 = new System.Windows.Forms.Label();
+            this.txtDeuda = new System.Windows.Forms.TextBox();
+            this.label19 = new System.Windows.Forms.Label();
             this.gbProducto.SuspendLayout();
             this.gbEncargo.SuspendLayout();
             this.SuspendLayout();
@@ -108,6 +109,7 @@ namespace ProyectoPedido
             this.btnAgregar.TabIndex = 6;
             this.btnAgregar.Text = "AGREGAR";
             this.btnAgregar.UseVisualStyleBackColor = true;
+            this.btnAgregar.Click += new System.EventHandler(this.btnAgregar_Click);
             // 
             // txtProducto
             // 
@@ -627,7 +629,7 @@ namespace ProyectoPedido
             this.label13.AutoSize = true;
             this.label13.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label13.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label13.Location = new System.Drawing.Point(114, 201);
+            this.label13.Location = new System.Drawing.Point(114, 156);
             this.label13.Name = "label13";
             this.label13.Size = new System.Drawing.Size(84, 20);
             this.label13.TabIndex = 34;
@@ -636,34 +638,16 @@ namespace ProyectoPedido
             // rtbObservaciones
             // 
             this.rtbObservaciones.Font = new System.Drawing.Font("Lato Black", 11.25F, System.Drawing.FontStyle.Bold);
-            this.rtbObservaciones.Location = new System.Drawing.Point(22, 224);
+            this.rtbObservaciones.Location = new System.Drawing.Point(22, 179);
             this.rtbObservaciones.MaxLength = 500;
             this.rtbObservaciones.Name = "rtbObservaciones";
             this.rtbObservaciones.Size = new System.Drawing.Size(261, 98);
             this.rtbObservaciones.TabIndex = 33;
             this.rtbObservaciones.Text = "";
             // 
-            // dtpFechaConfirmacion
-            // 
-            this.dtpFechaConfirmacion.Location = new System.Drawing.Point(53, 126);
-            this.dtpFechaConfirmacion.Name = "dtpFechaConfirmacion";
-            this.dtpFechaConfirmacion.Size = new System.Drawing.Size(202, 20);
-            this.dtpFechaConfirmacion.TabIndex = 36;
-            // 
-            // label19
-            // 
-            this.label19.AutoSize = true;
-            this.label19.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label19.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label19.Location = new System.Drawing.Point(91, 103);
-            this.label19.Name = "label19";
-            this.label19.Size = new System.Drawing.Size(132, 20);
-            this.label19.TabIndex = 35;
-            this.label19.Text = "Fecha de confirmacion: ";
-            // 
             // dtpFechaEntrega
             // 
-            this.dtpFechaEntrega.Location = new System.Drawing.Point(53, 172);
+            this.dtpFechaEntrega.Location = new System.Drawing.Point(53, 128);
             this.dtpFechaEntrega.Name = "dtpFechaEntrega";
             this.dtpFechaEntrega.Size = new System.Drawing.Size(202, 20);
             this.dtpFechaEntrega.TabIndex = 38;
@@ -673,11 +657,47 @@ namespace ProyectoPedido
             this.label20.AutoSize = true;
             this.label20.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label20.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label20.Location = new System.Drawing.Point(104, 149);
+            this.label20.Location = new System.Drawing.Point(104, 105);
             this.label20.Name = "label20";
             this.label20.Size = new System.Drawing.Size(101, 20);
             this.label20.TabIndex = 37;
             this.label20.Text = "Fecha de entrega:";
+            // 
+            // label21
+            // 
+            this.label21.AutoSize = true;
+            this.label21.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label21.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label21.Location = new System.Drawing.Point(70, 303);
+            this.label21.Name = "label21";
+            this.label21.Size = new System.Drawing.Size(94, 37);
+            this.label21.TabIndex = 39;
+            this.label21.Text = "DEUDA:";
+            // 
+            // txtDeuda
+            // 
+            this.txtDeuda.Font = new System.Drawing.Font("Lato Black", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.txtDeuda.ForeColor = System.Drawing.Color.DarkGreen;
+            this.txtDeuda.Location = new System.Drawing.Point(182, 308);
+            this.txtDeuda.MaxLength = 8;
+            this.txtDeuda.Name = "txtDeuda";
+            this.txtDeuda.Size = new System.Drawing.Size(70, 23);
+            this.txtDeuda.TabIndex = 40;
+            this.txtDeuda.Text = "0";
+            this.txtDeuda.TextAlign = System.Windows.Forms.HorizontalAlignment.Right;
+            // 
+            // label19
+            // 
+            this.label19.AutoSize = true;
+            this.label19.FlatStyle = System.Windows.Forms.FlatStyle.System;
+            this.label19.Font = new System.Drawing.Font("Myanmar Text", 15.75F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label19.ForeColor = System.Drawing.Color.Green;
+            this.label19.Location = new System.Drawing.Point(153, 304);
+            this.label19.Name = "label19";
+            this.label19.Size = new System.Drawing.Size(29, 37);
+            this.label19.TabIndex = 41;
+            this.label19.Text = "$";
+            this.label19.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
             // frmAgregarPedido
             // 
@@ -685,10 +705,11 @@ namespace ProyectoPedido
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.DarkSlateBlue;
             this.ClientSize = new System.Drawing.Size(970, 607);
+            this.Controls.Add(this.label19);
+            this.Controls.Add(this.txtDeuda);
+            this.Controls.Add(this.label21);
             this.Controls.Add(this.dtpFechaEntrega);
             this.Controls.Add(this.label20);
-            this.Controls.Add(this.dtpFechaConfirmacion);
-            this.Controls.Add(this.label19);
             this.Controls.Add(this.label13);
             this.Controls.Add(this.rtbObservaciones);
             this.Controls.Add(this.gbEncargo);
@@ -764,9 +785,10 @@ namespace ProyectoPedido
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.TextBox txtPrecioEncargo;
-        private System.Windows.Forms.DateTimePicker dtpFechaConfirmacion;
-        private System.Windows.Forms.Label label19;
         private System.Windows.Forms.DateTimePicker dtpFechaEntrega;
         private System.Windows.Forms.Label label20;
+        private System.Windows.Forms.Label label21;
+        private System.Windows.Forms.TextBox txtDeuda;
+        private System.Windows.Forms.Label label19;
     }
 }
