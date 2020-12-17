@@ -226,7 +226,7 @@ namespace ProyectoPedido
         private void btnAgregar_Click(object sender, EventArgs e)
         {
             //DECLARACIONES
-            string usuario = txtUsuario.Text, observaciones = rtbObservaciones.Text;
+            string usuario = txtUsuario.Text, observaciones = rtbObservaciones.Text, directorio = txtDirectorio.Text;
             float deuda = Convert.ToSingle(txtDeuda.Text);
             float monto = Convert.ToSingle(Total);
             bool ok = false;
@@ -249,7 +249,7 @@ namespace ProyectoPedido
                 encargos += " | " + en;    
             }
 
-            ok = Business.Pedido.Insert_Pedido(usuario, fechaEntrada, fechaEntrega, productos, encargos, observaciones, deuda, monto);
+            ok = Business.Pedido.Insert_Pedido(usuario, fechaEntrada, fechaEntrega, productos, encargos, observaciones, deuda, monto, directorio);
 
             if (ok)
             {
@@ -260,6 +260,14 @@ namespace ProyectoPedido
             else
             {
                 MessageBox.Show("Ha ocurrido un error al intentar insertar un pedido.", "La operacion ha fallado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnSearchFolder_Click(object sender, EventArgs e)
+        {
+            if (fbdDirectorio.ShowDialog() == DialogResult.OK)
+            {
+                txtDirectorio.Text = fbdDirectorio.SelectedPath;
             }
         }
     }

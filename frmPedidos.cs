@@ -25,7 +25,7 @@ namespace ProyectoPedido
             if (oList_Pedidos != null)
             {
                 dgvPedidos.DataSource = oList_Pedidos;
-                dgvPedidos.AutoResizeColumns();
+                //dgvPedidos.AutoResizeColumns();
             }
         }
 
@@ -38,6 +38,29 @@ namespace ProyectoPedido
         private void btnActualizar_Click(object sender, EventArgs e)
         {
             cargarPedidos();
+        }
+
+        private void btnEliminarPedido_Click(object sender, EventArgs e)
+        {
+            DialogResult resp = MessageBox.Show("Se eliminará un pedido de la base de datos. Desea continuar?", "¡ATENCION!", MessageBoxButtons.OKCancel, MessageBoxIcon.Warning);
+            
+            if(resp == DialogResult.OK)
+            {
+                int idPedido = Convert.ToInt32(dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value.ToString());
+
+                try
+                {
+                    bool ok = Business.Pedido.Delete_Pedido(idPedido);
+                    if (ok)
+                        MessageBox.Show("Se ha eliminado el pedido correctamente.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+                catch(Exception ex)
+                {
+                    MessageBox.Show("Se ha producido un error: " + ex.Message);
+                }
+
+                cargarPedidos();
+            }
         }
     }
 }

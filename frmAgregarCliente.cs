@@ -74,5 +74,13 @@ namespace ProyectoPedido
             }
 
         }
+
+        private void btnSearchFolder_Click(object sender, EventArgs e)
+        {
+            if (fbdDirectorio.ShowDialog() == DialogResult.OK)
+            {
+                txtUbicacion.Text = fbdDirectorio.SelectedPath;
+            }
+        }
     }
 }

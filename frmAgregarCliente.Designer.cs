@@ -43,6 +43,8 @@ namespace ProyectoPedido
             this.btnSalir = new System.Windows.Forms.Button();
             this.btnNumberUp = new System.Windows.Forms.Button();
             this.btnNumberDown = new System.Windows.Forms.Button();
+            this.btnSearchFolder = new System.Windows.Forms.Button();
+            this.fbdDirectorio = new System.Windows.Forms.FolderBrowserDialog();
             this.SuspendLayout();
             // 
             // label1
@@ -112,7 +114,7 @@ namespace ProyectoPedido
             // 
             // txtUltimoTrabajo
             // 
-            this.txtUltimoTrabajo.Location = new System.Drawing.Point(87, 200);
+            this.txtUltimoTrabajo.Location = new System.Drawing.Point(87, 199);
             this.txtUltimoTrabajo.Name = "txtUltimoTrabajo";
             this.txtUltimoTrabajo.Size = new System.Drawing.Size(202, 20);
             this.txtUltimoTrabajo.TabIndex = 8;
@@ -122,7 +124,7 @@ namespace ProyectoPedido
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(95, 230);
+            this.label5.Location = new System.Drawing.Point(95, 253);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(212, 20);
             this.label5.TabIndex = 4;
@@ -130,7 +132,7 @@ namespace ProyectoPedido
             // 
             // txtComprasHechas
             // 
-            this.txtComprasHechas.Location = new System.Drawing.Point(120, 252);
+            this.txtComprasHechas.Location = new System.Drawing.Point(120, 275);
             this.txtComprasHechas.Name = "txtComprasHechas";
             this.txtComprasHechas.Size = new System.Drawing.Size(84, 20);
             this.txtComprasHechas.TabIndex = 9;
@@ -138,7 +140,7 @@ namespace ProyectoPedido
             // 
             // btnAgregar
             // 
-            this.btnAgregar.Location = new System.Drawing.Point(190, 310);
+            this.btnAgregar.Location = new System.Drawing.Point(190, 314);
             this.btnAgregar.Name = "btnAgregar";
             this.btnAgregar.Size = new System.Drawing.Size(93, 38);
             this.btnAgregar.TabIndex = 10;
@@ -148,7 +150,7 @@ namespace ProyectoPedido
             // 
             // btnSalir
             // 
-            this.btnSalir.Location = new System.Drawing.Point(93, 310);
+            this.btnSalir.Location = new System.Drawing.Point(93, 314);
             this.btnSalir.Name = "btnSalir";
             this.btnSalir.Size = new System.Drawing.Size(93, 38);
             this.btnSalir.TabIndex = 11;
@@ -158,7 +160,7 @@ namespace ProyectoPedido
             // 
             // btnNumberUp
             // 
-            this.btnNumberUp.Location = new System.Drawing.Point(233, 250);
+            this.btnNumberUp.Location = new System.Drawing.Point(233, 273);
             this.btnNumberUp.Name = "btnNumberUp";
             this.btnNumberUp.Size = new System.Drawing.Size(23, 23);
             this.btnNumberUp.TabIndex = 12;
@@ -168,7 +170,7 @@ namespace ProyectoPedido
             // 
             // btnNumberDown
             // 
-            this.btnNumberDown.Location = new System.Drawing.Point(210, 250);
+            this.btnNumberDown.Location = new System.Drawing.Point(210, 273);
             this.btnNumberDown.Name = "btnNumberDown";
             this.btnNumberDown.Size = new System.Drawing.Size(23, 23);
             this.btnNumberDown.TabIndex = 13;
@@ -176,12 +178,26 @@ namespace ProyectoPedido
             this.btnNumberDown.UseVisualStyleBackColor = true;
             this.btnNumberDown.Click += new System.EventHandler(this.btnNumberDown_Click);
             // 
+            // btnSearchFolder
+            // 
+            this.btnSearchFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchFolder.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFolder.ForeColor = System.Drawing.Color.Plum;
+            this.btnSearchFolder.Location = new System.Drawing.Point(295, 153);
+            this.btnSearchFolder.Name = "btnSearchFolder";
+            this.btnSearchFolder.Size = new System.Drawing.Size(29, 23);
+            this.btnSearchFolder.TabIndex = 38;
+            this.btnSearchFolder.Text = "...";
+            this.btnSearchFolder.UseVisualStyleBackColor = true;
+            this.btnSearchFolder.Click += new System.EventHandler(this.btnSearchFolder_Click);
+            // 
             // frmAgregarCliente
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.MediumSlateBlue;
-            this.ClientSize = new System.Drawing.Size(374, 369);
+            this.ClientSize = new System.Drawing.Size(374, 373);
+            this.Controls.Add(this.btnSearchFolder);
             this.Controls.Add(this.btnNumberDown);
             this.Controls.Add(this.btnNumberUp);
             this.Controls.Add(this.btnSalir);
@@ -222,5 +238,7 @@ namespace ProyectoPedido
         private System.Windows.Forms.Button btnSalir;
         private System.Windows.Forms.Button btnNumberUp;
         private System.Windows.Forms.Button btnNumberDown;
+        private System.Windows.Forms.Button btnSearchFolder;
+        private System.Windows.Forms.FolderBrowserDialog fbdDirectorio;
     }
 }

@@ -81,6 +81,10 @@ namespace ProyectoPedido
             this.label21 = new System.Windows.Forms.Label();
             this.txtDeuda = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
+            this.fbdDirectorio = new System.Windows.Forms.FolderBrowserDialog();
+            this.txtDirectorio = new System.Windows.Forms.TextBox();
+            this.label22 = new System.Windows.Forms.Label();
+            this.btnSearchFolder = new System.Windows.Forms.Button();
             this.gbProducto.SuspendLayout();
             this.gbEncargo.SuspendLayout();
             this.SuspendLayout();
@@ -323,6 +327,9 @@ namespace ProyectoPedido
             // 
             // gbEncargo
             // 
+            this.gbEncargo.Controls.Add(this.btnSearchFolder);
+            this.gbEncargo.Controls.Add(this.label22);
+            this.gbEncargo.Controls.Add(this.txtDirectorio);
             this.gbEncargo.Controls.Add(this.label4);
             this.gbEncargo.Controls.Add(this.btnEliminarEncargo);
             this.gbEncargo.Controls.Add(this.label5);
@@ -699,6 +706,37 @@ namespace ProyectoPedido
             this.label19.Text = "$";
             this.label19.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // txtDirectorio
+            // 
+            this.txtDirectorio.Location = new System.Drawing.Point(20, 141);
+            this.txtDirectorio.Name = "txtDirectorio";
+            this.txtDirectorio.Size = new System.Drawing.Size(202, 25);
+            this.txtDirectorio.TabIndex = 46;
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label22.Location = new System.Drawing.Point(22, 118);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(66, 20);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "Directorio: ";
+            // 
+            // btnSearchFolder
+            // 
+            this.btnSearchFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchFolder.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFolder.ForeColor = System.Drawing.Color.Plum;
+            this.btnSearchFolder.Location = new System.Drawing.Point(228, 141);
+            this.btnSearchFolder.Name = "btnSearchFolder";
+            this.btnSearchFolder.Size = new System.Drawing.Size(29, 23);
+            this.btnSearchFolder.TabIndex = 37;
+            this.btnSearchFolder.Text = "...";
+            this.btnSearchFolder.UseVisualStyleBackColor = true;
+            this.btnSearchFolder.Click += new System.EventHandler(this.btnSearchFolder_Click);
+            // 
             // frmAgregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -790,5 +828,9 @@ namespace ProyectoPedido
         private System.Windows.Forms.Label label21;
         private System.Windows.Forms.TextBox txtDeuda;
         private System.Windows.Forms.Label label19;
+        private System.Windows.Forms.Button btnSearchFolder;
+        private System.Windows.Forms.Label label22;
+        private System.Windows.Forms.TextBox txtDirectorio;
+        private System.Windows.Forms.FolderBrowserDialog fbdDirectorio;
     }
 }
