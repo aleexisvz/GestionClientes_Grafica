@@ -66,9 +66,25 @@ namespace ProyectoPedido
 
         private void btnAbrir_Click(object sender, EventArgs e)
         {
-            string ubicacion = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[10].Value.ToString();
+            string ubicacion = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[11].Value.ToString();
 
             Process.Start("explorer.exe", ubicacion);
+        }
+
+        private void btnConfirmar_Click(object sender, EventArgs e)
+        {
+            int idPedido = Convert.ToInt32(dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value.ToString());
+
+            try
+            {
+                bool ok = Business.Pedido.Confirm_Pedido(idPedido, DateTime.Now);
+                if (ok)
+                    MessageBox.Show("Se ha confirmado el pedido correctamente.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Se ha producido un error: " + ex.Message);
+            }
         }
     }
 }
