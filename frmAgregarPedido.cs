@@ -213,7 +213,7 @@ namespace ProyectoPedido
                 precio = Convert.ToDouble(txtPrecioEncargo.Text);
 
                 //Generamos el encargo
-                encargoFinal = $"x{cantidad} - {encargo} {medidas}cm {material} - {tiempoEstimado} - ${precio}";
+                encargoFinal = $"x{cantidad} - {encargo} {medidas} {material} - {tiempoEstimado} - ${precio}";
 
                 lbEncargos.Items.Add(encargoFinal);
 

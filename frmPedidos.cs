@@ -2,6 +2,7 @@
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
+using System.Diagnostics;
 using System.Drawing;
 using System.Linq;
 using System.Text;
@@ -61,6 +62,13 @@ namespace ProyectoPedido
 
                 cargarPedidos();
             }
+        }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            string ubicacion = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[10].Value.ToString();
+
+            Process.Start("explorer.exe", ubicacion);
         }
     }
 }

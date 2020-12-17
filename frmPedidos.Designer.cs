@@ -36,7 +36,7 @@ namespace ProyectoPedido
             this.btnEliminarPedido = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
-            this.button4 = new System.Windows.Forms.Button();
+            this.btnAbrir = new System.Windows.Forms.Button();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -133,17 +133,19 @@ namespace ProyectoPedido
             this.btnActualizar.UseVisualStyleBackColor = true;
             this.btnActualizar.Click += new System.EventHandler(this.btnActualizar_Click);
             // 
-            // button4
+            // btnAbrir
             // 
-            this.button4.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.button4.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.button4.ForeColor = System.Drawing.Color.Plum;
-            this.button4.Location = new System.Drawing.Point(793, 439);
-            this.button4.Name = "button4";
-            this.button4.Size = new System.Drawing.Size(81, 32);
-            this.button4.TabIndex = 9;
-            this.button4.Text = "DELETE";
-            this.button4.UseVisualStyleBackColor = true;
+            this.btnAbrir.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Right)));
+            this.btnAbrir.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnAbrir.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnAbrir.ForeColor = System.Drawing.Color.Plum;
+            this.btnAbrir.Location = new System.Drawing.Point(793, 396);
+            this.btnAbrir.Name = "btnAbrir";
+            this.btnAbrir.Size = new System.Drawing.Size(81, 32);
+            this.btnAbrir.TabIndex = 9;
+            this.btnAbrir.Text = "ABRIR";
+            this.btnAbrir.UseVisualStyleBackColor = true;
+            this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
             // frmPedidos
             // 
@@ -151,7 +153,7 @@ namespace ProyectoPedido
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(895, 589);
-            this.Controls.Add(this.button4);
+            this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnConfirmar);
             this.Controls.Add(this.btnEliminarPedido);
@@ -172,6 +174,6 @@ namespace ProyectoPedido
         private System.Windows.Forms.Button btnEliminarPedido;
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnActualizar;
-        private System.Windows.Forms.Button button4;
+        private System.Windows.Forms.Button btnAbrir;
     }
 }

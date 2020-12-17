@@ -187,5 +187,12 @@ namespace ProyectoPedido
         {
             cargarClientes();
         }
+
+        private void btnAbrir_Click(object sender, EventArgs e)
+        {
+            string ubicacion = dgvClientes.Rows[dgvClientes.CurrentRow.Index].Cells[3].Value.ToString();
+
+            Process.Start("explorer.exe", ubicacion);
+        }
     }
 }
