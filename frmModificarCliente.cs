@@ -36,7 +36,7 @@ namespace ProyectoPedido
                 }
             }
             else
-                MessageBox.Show("Rellene los campos necesarios.", "Campos vacios", MessageBoxButtons.OK);
+                MessageBox.Show("Rellene los campos necesarios.", "Campos vacios", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
         }
     }
 }

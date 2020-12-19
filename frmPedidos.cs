@@ -58,7 +58,7 @@ namespace ProyectoPedido
                 }
                 catch(Exception ex)
                 {
-                    MessageBox.Show("Se ha producido un error: " + ex.Message);
+                    MessageBox.Show("Se ha producido un error: " + ex.Message, "Ha ocurrido un error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 cargarPedidos();
@@ -88,7 +88,7 @@ namespace ProyectoPedido
             }
             catch (Exception ex)
             {
-                MessageBox.Show("Se ha producido un error: " + ex.Message);
+                MessageBox.Show("Se ha producido un error: " + ex.Message, "Ha ocurrido un error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
         }
 

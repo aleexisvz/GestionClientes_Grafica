@@ -51,6 +51,9 @@ namespace ProyectoPedido
             this.label7 = new System.Windows.Forms.Label();
             this.lblTotal = new System.Windows.Forms.Label();
             this.gbEncargo = new System.Windows.Forms.GroupBox();
+            this.btnSearchFolder = new System.Windows.Forms.Button();
+            this.label22 = new System.Windows.Forms.Label();
+            this.txtDirectorio = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.btnEliminarEncargo = new System.Windows.Forms.Button();
             this.label5 = new System.Windows.Forms.Label();
@@ -82,9 +85,6 @@ namespace ProyectoPedido
             this.txtDeuda = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.fbdDirectorio = new System.Windows.Forms.FolderBrowserDialog();
-            this.txtDirectorio = new System.Windows.Forms.TextBox();
-            this.label22 = new System.Windows.Forms.Label();
-            this.btnSearchFolder = new System.Windows.Forms.Button();
             this.gbProducto.SuspendLayout();
             this.gbEncargo.SuspendLayout();
             this.SuspendLayout();
@@ -362,6 +362,37 @@ namespace ProyectoPedido
             this.gbEncargo.TabStop = false;
             this.gbEncargo.Text = "ENCARGO";
             // 
+            // btnSearchFolder
+            // 
+            this.btnSearchFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnSearchFolder.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnSearchFolder.ForeColor = System.Drawing.Color.Plum;
+            this.btnSearchFolder.Location = new System.Drawing.Point(228, 141);
+            this.btnSearchFolder.Name = "btnSearchFolder";
+            this.btnSearchFolder.Size = new System.Drawing.Size(29, 23);
+            this.btnSearchFolder.TabIndex = 37;
+            this.btnSearchFolder.Text = "...";
+            this.btnSearchFolder.UseVisualStyleBackColor = true;
+            this.btnSearchFolder.Click += new System.EventHandler(this.btnSearchFolder_Click);
+            // 
+            // label22
+            // 
+            this.label22.AutoSize = true;
+            this.label22.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
+            this.label22.Location = new System.Drawing.Point(22, 118);
+            this.label22.Name = "label22";
+            this.label22.Size = new System.Drawing.Size(66, 20);
+            this.label22.TabIndex = 47;
+            this.label22.Text = "Directorio: ";
+            // 
+            // txtDirectorio
+            // 
+            this.txtDirectorio.Location = new System.Drawing.Point(20, 141);
+            this.txtDirectorio.Name = "txtDirectorio";
+            this.txtDirectorio.Size = new System.Drawing.Size(202, 25);
+            this.txtDirectorio.TabIndex = 46;
+            // 
             // label4
             // 
             this.label4.AutoSize = true;
@@ -390,11 +421,11 @@ namespace ProyectoPedido
             this.label5.AutoSize = true;
             this.label5.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.label5.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label5.Location = new System.Drawing.Point(18, 259);
+            this.label5.Location = new System.Drawing.Point(61, 260);
             this.label5.Name = "label5";
-            this.label5.Size = new System.Drawing.Size(100, 20);
+            this.label5.Size = new System.Drawing.Size(47, 20);
             this.label5.TabIndex = 38;
-            this.label5.Text = "Precio de unidad:";
+            this.label5.Text = "Precio: ";
             // 
             // txtPrecioEncargo
             // 
@@ -705,37 +736,6 @@ namespace ProyectoPedido
             this.label19.TabIndex = 41;
             this.label19.Text = "$";
             this.label19.TextAlign = System.Drawing.ContentAlignment.TopRight;
-            // 
-            // txtDirectorio
-            // 
-            this.txtDirectorio.Location = new System.Drawing.Point(20, 141);
-            this.txtDirectorio.Name = "txtDirectorio";
-            this.txtDirectorio.Size = new System.Drawing.Size(202, 25);
-            this.txtDirectorio.TabIndex = 46;
-            // 
-            // label22
-            // 
-            this.label22.AutoSize = true;
-            this.label22.Font = new System.Drawing.Font("Myanmar Text", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.label22.ForeColor = System.Drawing.SystemColors.ControlLightLight;
-            this.label22.Location = new System.Drawing.Point(22, 118);
-            this.label22.Name = "label22";
-            this.label22.Size = new System.Drawing.Size(66, 20);
-            this.label22.TabIndex = 47;
-            this.label22.Text = "Directorio: ";
-            // 
-            // btnSearchFolder
-            // 
-            this.btnSearchFolder.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.btnSearchFolder.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.btnSearchFolder.ForeColor = System.Drawing.Color.Plum;
-            this.btnSearchFolder.Location = new System.Drawing.Point(228, 141);
-            this.btnSearchFolder.Name = "btnSearchFolder";
-            this.btnSearchFolder.Size = new System.Drawing.Size(29, 23);
-            this.btnSearchFolder.TabIndex = 37;
-            this.btnSearchFolder.Text = "...";
-            this.btnSearchFolder.UseVisualStyleBackColor = true;
-            this.btnSearchFolder.Click += new System.EventHandler(this.btnSearchFolder_Click);
             // 
             // frmAgregarPedido
             // 

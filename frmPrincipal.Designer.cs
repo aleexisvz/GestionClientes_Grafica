@@ -91,7 +91,6 @@ namespace ProyectoPedido
             this.button1.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.button1.Size = new System.Drawing.Size(250, 40);
             this.button1.TabIndex = 4;
-            this.button1.Text = "Agregar Cliente";
             this.button1.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.button1.UseVisualStyleBackColor = true;
             // 
@@ -107,7 +106,6 @@ namespace ProyectoPedido
             this.btnEliminarCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnEliminarCliente.Size = new System.Drawing.Size(250, 40);
             this.btnEliminarCliente.TabIndex = 3;
-            this.btnEliminarCliente.Text = "Eliminar Cliente";
             this.btnEliminarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarCliente.UseVisualStyleBackColor = true;
             this.btnEliminarCliente.Click += new System.EventHandler(this.btnEliminarCliente_Click);
@@ -124,7 +122,6 @@ namespace ProyectoPedido
             this.btnModificarCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnModificarCliente.Size = new System.Drawing.Size(250, 40);
             this.btnModificarCliente.TabIndex = 2;
-            this.btnModificarCliente.Text = "Modificar Cliente";
             this.btnModificarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificarCliente.UseVisualStyleBackColor = true;
             this.btnModificarCliente.Click += new System.EventHandler(this.btnModificarCliente_Click);
@@ -141,7 +138,6 @@ namespace ProyectoPedido
             this.btnBuscarCliente.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnBuscarCliente.Size = new System.Drawing.Size(250, 40);
             this.btnBuscarCliente.TabIndex = 1;
-            this.btnBuscarCliente.Text = "Buscar Cliente";
             this.btnBuscarCliente.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarCliente.UseVisualStyleBackColor = true;
             this.btnBuscarCliente.Click += new System.EventHandler(this.btnBuscarCliente_Click);
@@ -206,7 +202,6 @@ namespace ProyectoPedido
             this.btnAgregarPedido.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnAgregarPedido.Size = new System.Drawing.Size(250, 40);
             this.btnAgregarPedido.TabIndex = 4;
-            this.btnAgregarPedido.Text = "Agregar Pedido";
             this.btnAgregarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnAgregarPedido.UseVisualStyleBackColor = true;
             this.btnAgregarPedido.Click += new System.EventHandler(this.btnAgregarPedido_Click);
@@ -223,7 +218,6 @@ namespace ProyectoPedido
             this.btnEliminarPedido.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnEliminarPedido.Size = new System.Drawing.Size(250, 40);
             this.btnEliminarPedido.TabIndex = 3;
-            this.btnEliminarPedido.Text = "Eliminar Pedido";
             this.btnEliminarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnEliminarPedido.UseVisualStyleBackColor = true;
             this.btnEliminarPedido.Click += new System.EventHandler(this.btnEliminarPedido_Click);
@@ -240,7 +234,6 @@ namespace ProyectoPedido
             this.btnModificarPedido.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnModificarPedido.Size = new System.Drawing.Size(250, 40);
             this.btnModificarPedido.TabIndex = 2;
-            this.btnModificarPedido.Text = "Modificar Pedido";
             this.btnModificarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnModificarPedido.UseVisualStyleBackColor = true;
             this.btnModificarPedido.Click += new System.EventHandler(this.btnModificarPedido_Click);
@@ -257,7 +250,6 @@ namespace ProyectoPedido
             this.btnBuscarPedido.Padding = new System.Windows.Forms.Padding(35, 0, 0, 0);
             this.btnBuscarPedido.Size = new System.Drawing.Size(250, 40);
             this.btnBuscarPedido.TabIndex = 1;
-            this.btnBuscarPedido.Text = "Buscar Pedido";
             this.btnBuscarPedido.TextAlign = System.Drawing.ContentAlignment.MiddleLeft;
             this.btnBuscarPedido.UseVisualStyleBackColor = true;
             this.btnBuscarPedido.Click += new System.EventHandler(this.btnBuscarPedido_Click);

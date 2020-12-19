@@ -237,6 +237,18 @@ namespace ProyectoPedido
             DateTime fechaEntrada = dtpFechaEntrada.Value;
             DateTime fechaEntrega = dtpFechaEntrega.Value;
 
+            frmClientes frmC = new frmClientes();
+
+            int idCliente = 0;
+
+            foreach (DataGridViewRow r in frmC.dgvClientes.Rows)
+            {
+                if ((r.Cells[1].Value).ToString().ToLower().Contains(usuario.ToLower()))
+                {
+                    idCliente = Convert.ToInt32(r.Cells[0].Value);
+                }
+            }
+
             //Seteamos productos
             foreach (var p in lbProductos.Items)
             {
@@ -255,12 +267,16 @@ namespace ProyectoPedido
             {
                 MessageBox.Show("Se ha insertado el pedido correctamente.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Asterisk);
 
+                Business.Cliente.Update_LastWork(encargos, idCliente);
+
                 this.Close();
             }
             else
             {
                 MessageBox.Show("Ha ocurrido un error al intentar insertar un pedido.", "La operacion ha fallado", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
+            
         }
 
         private void btnSearchFolder_Click(object sender, EventArgs e)

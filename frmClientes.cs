@@ -29,7 +29,6 @@ namespace ProyectoPedido
             if (oList_Clientes != null)
             {
                 dgvClientes.DataSource = oList_Clientes;
-                dgvClientes.AutoResizeColumns();
             }
         }
 
@@ -55,7 +54,7 @@ namespace ProyectoPedido
                 case "ID":
                     cargarClientes();
 
-                    string id = InputDialog.mostrar("Inserte el ID que desea buscar: ");
+                    string id = InputDialog.mostrar("Inserte el ID: ");
 
                     foreach (DataGridViewRow r in dgvClientes.Rows)
                     {
@@ -70,7 +69,7 @@ namespace ProyectoPedido
                 case "Nombre":
                     cargarClientes();
 
-                    string nombre = InputDialog.mostrar("Inserte el nombre que desea buscar: ");
+                    string nombre = InputDialog.mostrar("Inserte el nombre: ");
 
                     foreach (DataGridViewRow r in dgvClientes.Rows)
                     {
@@ -85,7 +84,7 @@ namespace ProyectoPedido
                 case "Marca":
                     cargarClientes();
 
-                    string marca = InputDialog.mostrar("Inserte la marca que desea buscar: ");
+                    string marca = InputDialog.mostrar("Inserte la marca: ");
 
                     foreach (DataGridViewRow r in dgvClientes.Rows)
                     {
@@ -100,7 +99,7 @@ namespace ProyectoPedido
                 case "Ubicacion de Carpeta":
                     cargarClientes();
 
-                    string ubicCarpeta = InputDialog.mostrar("Inserte la ubicacion de la carpeta que desea buscar: ");
+                    string ubicCarpeta = InputDialog.mostrar("Inserte la ubicacion de la carpeta: ");
 
                     foreach (DataGridViewRow r in dgvClientes.Rows)
                     {
@@ -115,7 +114,7 @@ namespace ProyectoPedido
                 case "Ultimo Trabajo":
                     cargarClientes();
 
-                    string ultmoTrabajo = InputDialog.mostrar("Inserte el ultimo trabajo que desea buscar: ");
+                    string ultmoTrabajo = InputDialog.mostrar("Inserte el ultimo trabajo: ");
 
                     foreach (DataGridViewRow r in dgvClientes.Rows)
                     {
@@ -130,7 +129,7 @@ namespace ProyectoPedido
                 case "Compras Hechas":
                     cargarClientes();
 
-                    string comprasHechas = InputDialog.mostrar("Inserte las compras hechas que desea buscar: ");
+                    string comprasHechas = InputDialog.mostrar("Inserte las compras hechas: ");
 
                     foreach (DataGridViewRow r in dgvClientes.Rows)
                     {
@@ -157,12 +156,12 @@ namespace ProyectoPedido
                 {
                     bool ok = Business.Cliente.Delete_Cliente(idCliente);
                     if (ok)
-                        MessageBox.Show("Operación exitosa");
+                        MessageBox.Show("El cliente se ha eliminado correctamente.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Exclamation);
 
                 }
                 catch (Exception ex)
                 {
-                    MessageBox.Show("Se ha producido un error: " + ex.Message);
+                    MessageBox.Show("Se ha producido un error: " + ex.Message, "Ha ocurrido un error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
                 }
 
                 cargarClientes();
