@@ -29,14 +29,16 @@ namespace ProyectoPedido
         /// </summary>
         private void InitializeComponent()
         {
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle5 = new System.Windows.Forms.DataGridViewCellStyle();
-            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle6 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle1 = new System.Windows.Forms.DataGridViewCellStyle();
+            System.Windows.Forms.DataGridViewCellStyle dataGridViewCellStyle2 = new System.Windows.Forms.DataGridViewCellStyle();
             this.btnAgregarPedido = new System.Windows.Forms.Button();
             this.dgvPedidos = new System.Windows.Forms.DataGridView();
             this.btnEliminarPedido = new System.Windows.Forms.Button();
             this.btnConfirmar = new System.Windows.Forms.Button();
             this.btnActualizar = new System.Windows.Forms.Button();
             this.btnAbrir = new System.Windows.Forms.Button();
+            this.btnModificar = new System.Windows.Forms.Button();
+            this.cmbCells = new System.Windows.Forms.ComboBox();
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).BeginInit();
             this.SuspendLayout();
             // 
@@ -68,27 +70,27 @@ namespace ProyectoPedido
             this.dgvPedidos.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.dgvPedidos.ColumnHeadersBorderStyle = System.Windows.Forms.DataGridViewHeaderBorderStyle.Single;
             this.dgvPedidos.ColumnHeadersHeightSizeMode = System.Windows.Forms.DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridViewCellStyle5.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle5.BackColor = System.Drawing.Color.MediumPurple;
-            dataGridViewCellStyle5.Font = new System.Drawing.Font("Lato Black", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle5.ForeColor = System.Drawing.Color.Black;
-            dataGridViewCellStyle5.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle5.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle5.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
-            this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle5;
+            dataGridViewCellStyle1.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = System.Drawing.Color.MediumPurple;
+            dataGridViewCellStyle1.Font = new System.Drawing.Font("Lato Black", 9.749999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle1.ForeColor = System.Drawing.Color.Black;
+            dataGridViewCellStyle1.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = System.Windows.Forms.DataGridViewTriState.False;
+            this.dgvPedidos.DefaultCellStyle = dataGridViewCellStyle1;
             this.dgvPedidos.GridColor = System.Drawing.Color.Indigo;
             this.dgvPedidos.Location = new System.Drawing.Point(24, 39);
             this.dgvPedidos.MultiSelect = false;
             this.dgvPedidos.Name = "dgvPedidos";
             this.dgvPedidos.ReadOnly = true;
-            dataGridViewCellStyle6.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
-            dataGridViewCellStyle6.BackColor = System.Drawing.Color.MediumPurple;
-            dataGridViewCellStyle6.Font = new System.Drawing.Font("Lato Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            dataGridViewCellStyle6.ForeColor = System.Drawing.SystemColors.WindowText;
-            dataGridViewCellStyle6.SelectionBackColor = System.Drawing.SystemColors.Highlight;
-            dataGridViewCellStyle6.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
-            dataGridViewCellStyle6.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
-            this.dgvPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle6;
+            dataGridViewCellStyle2.Alignment = System.Windows.Forms.DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = System.Drawing.Color.MediumPurple;
+            dataGridViewCellStyle2.Font = new System.Drawing.Font("Lato Black", 8.999999F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            dataGridViewCellStyle2.ForeColor = System.Drawing.SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = System.Drawing.SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = System.Drawing.SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = System.Windows.Forms.DataGridViewTriState.True;
+            this.dgvPedidos.RowHeadersDefaultCellStyle = dataGridViewCellStyle2;
             this.dgvPedidos.SelectionMode = System.Windows.Forms.DataGridViewSelectionMode.FullRowSelect;
             this.dgvPedidos.Size = new System.Drawing.Size(850, 329);
             this.dgvPedidos.TabIndex = 5;
@@ -123,10 +125,11 @@ namespace ProyectoPedido
             // 
             // btnActualizar
             // 
+            this.btnActualizar.Anchor = System.Windows.Forms.AnchorStyles.Bottom;
             this.btnActualizar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.btnActualizar.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.btnActualizar.ForeColor = System.Drawing.Color.Plum;
-            this.btnActualizar.Location = new System.Drawing.Point(544, 396);
+            this.btnActualizar.Location = new System.Drawing.Point(398, 396);
             this.btnActualizar.Name = "btnActualizar";
             this.btnActualizar.Size = new System.Drawing.Size(97, 32);
             this.btnActualizar.TabIndex = 8;
@@ -148,12 +151,46 @@ namespace ProyectoPedido
             this.btnAbrir.UseVisualStyleBackColor = true;
             this.btnAbrir.Click += new System.EventHandler(this.btnAbrir_Click);
             // 
+            // btnModificar
+            // 
+            this.btnModificar.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.btnModificar.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.btnModificar.Font = new System.Drawing.Font("Lato Black", 8.25F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.btnModificar.ForeColor = System.Drawing.Color.Plum;
+            this.btnModificar.Location = new System.Drawing.Point(90, 439);
+            this.btnModificar.Name = "btnModificar";
+            this.btnModificar.Size = new System.Drawing.Size(90, 32);
+            this.btnModificar.TabIndex = 10;
+            this.btnModificar.Text = "MODIFICAR";
+            this.btnModificar.UseVisualStyleBackColor = true;
+            this.btnModificar.Click += new System.EventHandler(this.btnModificar_Click);
+            // 
+            // cmbCells
+            // 
+            this.cmbCells.Anchor = ((System.Windows.Forms.AnchorStyles)((System.Windows.Forms.AnchorStyles.Bottom | System.Windows.Forms.AnchorStyles.Left)));
+            this.cmbCells.FormattingEnabled = true;
+            this.cmbCells.Items.AddRange(new object[] {
+            "idCliente",
+            "usuario",
+            "producto",
+            "encargo",
+            "observaciones",
+            "monto",
+            "deuda",
+            "directorio"});
+            this.cmbCells.Location = new System.Drawing.Point(190, 446);
+            this.cmbCells.Name = "cmbCells";
+            this.cmbCells.Size = new System.Drawing.Size(121, 21);
+            this.cmbCells.TabIndex = 11;
+            // 
             // frmPedidos
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.Indigo;
             this.ClientSize = new System.Drawing.Size(895, 589);
+            this.Controls.Add(this.cmbCells);
+            this.Controls.Add(this.btnModificar);
             this.Controls.Add(this.btnAbrir);
             this.Controls.Add(this.btnActualizar);
             this.Controls.Add(this.btnConfirmar);
@@ -163,6 +200,7 @@ namespace ProyectoPedido
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "frmPedidos";
             this.Text = "Pedidos";
+            this.Load += new System.EventHandler(this.frmPedidos_Load);
             ((System.ComponentModel.ISupportInitialize)(this.dgvPedidos)).EndInit();
             this.ResumeLayout(false);
 
@@ -176,5 +214,7 @@ namespace ProyectoPedido
         private System.Windows.Forms.Button btnConfirmar;
         private System.Windows.Forms.Button btnActualizar;
         private System.Windows.Forms.Button btnAbrir;
+        private System.Windows.Forms.Button btnModificar;
+        private System.Windows.Forms.ComboBox cmbCells;
     }
 }
