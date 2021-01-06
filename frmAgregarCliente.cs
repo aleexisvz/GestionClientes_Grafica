@@ -25,12 +25,17 @@ namespace ProyectoPedido
 
         private void btnNumberUp_Click(object sender, EventArgs e)
         {
-            txtComprasHechas.Text = (ComprasHechas + 1).ToString(); 
+            ComprasHechas++;
+            txtComprasHechas.Text = ComprasHechas.ToString(); 
         }
 
         private void btnNumberDown_Click(object sender, EventArgs e)
         {
-            txtComprasHechas.Text = (ComprasHechas - 1).ToString();
+            if(ComprasHechas != 0)
+            {
+                ComprasHechas--;
+                txtComprasHechas.Text = ComprasHechas.ToString();
+            }
         }
 
         private void btnSalir_Click(object sender, EventArgs e)
@@ -46,7 +51,7 @@ namespace ProyectoPedido
 
             bool ok = false;
 
-            if (txtNombre.Text != "" && txtMarca.Text != "" && txtUbicacion.Text != "" && txtUltimoTrabajo.Text != "")
+            if (txtNombre.Text != "" && txtMarca.Text != "" && txtUbicacion.Text != "")
             {
                 //Ingresar cliente
                 nombre = txtNombre.Text;

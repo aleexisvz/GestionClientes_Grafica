@@ -73,16 +73,22 @@ namespace ProyectoPedido
 
         private void btnEliminarProducto_Click(object sender, EventArgs e)
         {
-            //Obtenemos los datos del producto a eliminar
-            int currentIdProduct = lbProductos.SelectedIndex;
-            string producto = lbProductos.SelectedItem.ToString();
-            double precioRestar = Convert.ToDouble(producto.Substring(producto.LastIndexOf(" $") + 2));
-            
-            //Restamos al total
-            Total -= precioRestar;
+            //Comprobamos
+            if(lbProductos.SelectedIndex >= 0)
+            {
+                //Obtenemos los datos del producto a eliminar
+                string producto = lbProductos.SelectedItem.ToString();
+                double precioRestar = Convert.ToDouble(producto.Substring(producto.LastIndexOf(" $") + 2));
 
-            //Removemos el producto
-            lbProductos.Items.RemoveAt(currentIdProduct);
+                //Restamos al total
+                Total -= precioRestar;
+                lblTotal.Text = Total.ToString();
+
+                lbProductos.Items.RemoveAt(lbProductos.SelectedIndex);
+            }
+                
+            else
+                MessageBox.Show("Tienes que seleccionar un producto primero.", "Ha ocurrido un error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
 
         private void cmbCantidad_SelectedIndexChanged(object sender, EventArgs e)
@@ -103,27 +109,53 @@ namespace ProyectoPedido
             else
             {
                 switch (cmbTiempoEstimado.SelectedIndex)
-                {
+                {//SOLUCIONAR URGENTE
                     case 0:
-                        dtpFechaEntrega.Value = DateTime.Now.AddDays(1);
+                        dtpFechaEntrega.Value = dtpFechaEntrada.Value;
+
+                        dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
+
+                        while (dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Saturday || dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Sunday)
+                            dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
                         break;
                     case 1:
-                        dtpFechaEntrega.Value = DateTime.Now.AddDays(3);
+                        dtpFechaEntrega.Value = dtpFechaEntrada.Value;
+
+                        
+
+                        while (dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Saturday || dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Sunday)
+                            dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
+                        dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(3);
                         break;
                     case 2:
-                        dtpFechaEntrega.Value = DateTime.Now.AddDays(5);
+                        while (dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Saturday || dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Sunday)
+                            dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
+
+                        dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(5);
                         break;
                     case 3:
-                        dtpFechaEntrega.Value = DateTime.Now.AddDays(10);
+                        while (dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Saturday || dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Sunday)
+                            dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
+
+                        dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(10);
                         break;
                     case 4:
-                        dtpFechaEntrega.Value = DateTime.Now.AddDays(15);
+                        while (dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Saturday || dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Sunday)
+                            dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
+
+                        dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(15);
                         break;
                     case 5:
-                        dtpFechaEntrega.Value = DateTime.Now.AddDays(20);
+                        while (dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Saturday || dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Sunday)
+                            dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
+
+                        dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(20);
                         break;
                     case 6:
-                        dtpFechaEntrega.Value = DateTime.Now.AddDays(30);
+                        while (dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Saturday || dtpFechaEntrega.Value.DayOfWeek == DayOfWeek.Sunday)
+                            dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(1);
+
+                        dtpFechaEntrega.Value = dtpFechaEntrega.Value.AddDays(30);
                         break;
                 }
 
@@ -149,6 +181,7 @@ namespace ProyectoPedido
 
             //Seteamos los dateTimePicker
             dtpFechaEntrada.Value = DateTime.Now;
+            dtpFechaEntrega.Value = DateTime.Now;
 
             cmbTiempoEstimado_SelectedIndexChanged(sender, e);
         }
@@ -285,6 +318,25 @@ namespace ProyectoPedido
             {
                 txtDirectorio.Text = fbdDirectorio.SelectedPath;
             }
+        }
+
+        private void btnEliminarEncargo_Click(object sender, EventArgs e)
+        {
+            if (lbEncargos.SelectedIndex >= 0)
+            {
+                //Obtenemos los datos del producto a eliminar
+                int currentIdOrder = lbEncargos.SelectedIndex;
+                string encargo = lbEncargos.SelectedItem.ToString();
+                double precioRestar = Convert.ToDouble(encargo.Substring(encargo.LastIndexOf(" $") + 2));
+
+                //Restamos al total
+                Total -= precioRestar;
+                lblTotal.Text = Total.ToString();
+
+                lbEncargos.Items.RemoveAt(lbEncargos.SelectedIndex);
+            }
+            else
+                MessageBox.Show("Tienes que seleccionar un encargo primero.", "Ha ocurrido un error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
         }
     }
 }

@@ -415,6 +415,7 @@ namespace ProyectoPedido
             this.btnEliminarEncargo.TabIndex = 38;
             this.btnEliminarEncargo.Text = "-";
             this.btnEliminarEncargo.UseVisualStyleBackColor = true;
+            this.btnEliminarEncargo.Click += new System.EventHandler(this.btnEliminarEncargo_Click);
             // 
             // label5
             // 
