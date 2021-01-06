@@ -85,6 +85,7 @@ namespace ProyectoPedido
             this.txtDeuda = new System.Windows.Forms.TextBox();
             this.label19 = new System.Windows.Forms.Label();
             this.fbdDirectorio = new System.Windows.Forms.FolderBrowserDialog();
+            this.txtMaterial = new System.Windows.Forms.TextBox();
             this.gbProducto.SuspendLayout();
             this.gbEncargo.SuspendLayout();
             this.SuspendLayout();
@@ -327,6 +328,7 @@ namespace ProyectoPedido
             // 
             // gbEncargo
             // 
+            this.gbEncargo.Controls.Add(this.txtMaterial);
             this.gbEncargo.Controls.Add(this.btnSearchFolder);
             this.gbEncargo.Controls.Add(this.label22);
             this.gbEncargo.Controls.Add(this.txtDirectorio);
@@ -442,6 +444,8 @@ namespace ProyectoPedido
             // 
             this.cmbMedidas.FormattingEnabled = true;
             this.cmbMedidas.Items.AddRange(new object[] {
+            "1cm",
+            "2cm",
             "3cm",
             "4cm",
             "5cm",
@@ -539,11 +543,15 @@ namespace ProyectoPedido
             this.cmbMaterial.Items.AddRange(new object[] {
             "Autoadhesivo",
             "Transp. / OPP",
-            "Metalizado"});
+            "Metalizado",
+            "Ilustracion 300grs",
+            "Cartulina 250grs",
+            "Otro..."});
             this.cmbMaterial.Location = new System.Drawing.Point(500, 50);
             this.cmbMaterial.Name = "cmbMaterial";
             this.cmbMaterial.Size = new System.Drawing.Size(130, 26);
             this.cmbMaterial.TabIndex = 39;
+            this.cmbMaterial.SelectedIndexChanged += new System.EventHandler(this.cmbMaterial_SelectedIndexChanged);
             // 
             // label15
             // 
@@ -738,6 +746,16 @@ namespace ProyectoPedido
             this.label19.Text = "$";
             this.label19.TextAlign = System.Drawing.ContentAlignment.TopRight;
             // 
+            // txtMaterial
+            // 
+            this.txtMaterial.Location = new System.Drawing.Point(500, 81);
+            this.txtMaterial.Name = "txtMaterial";
+            this.txtMaterial.Size = new System.Drawing.Size(128, 25);
+            this.txtMaterial.TabIndex = 48;
+            this.txtMaterial.Text = "Material";
+            this.txtMaterial.TextAlign = System.Windows.Forms.HorizontalAlignment.Center;
+            this.txtMaterial.Visible = false;
+            // 
             // frmAgregarPedido
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(6F, 13F);
@@ -833,5 +851,6 @@ namespace ProyectoPedido
         private System.Windows.Forms.Label label22;
         private System.Windows.Forms.TextBox txtDirectorio;
         private System.Windows.Forms.FolderBrowserDialog fbdDirectorio;
+        private System.Windows.Forms.TextBox txtMaterial;
     }
 }

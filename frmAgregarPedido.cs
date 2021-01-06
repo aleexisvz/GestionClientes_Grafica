@@ -188,7 +188,7 @@ namespace ProyectoPedido
 
         private void cmbMedidas_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (cmbMedidas.SelectedIndex == 9)
+            if (cmbMedidas.SelectedIndex == 10)
             {
                 txtAlto.Visible = true;
                 txtAncho.Visible = true;
@@ -234,7 +234,10 @@ namespace ProyectoPedido
                     medidas = cmbMedidas.Text;
 
                 //Seteamos el material
-                material = cmbMaterial.Text;
+                if (cmbMaterial.SelectedIndex == 6)
+                    material = cmbMaterial.Text;
+                else
+                    material = txtMaterial.Text;
 
                 //Seteamos el tiempo estimado
                 if (cmbTiempoEstimado.SelectedIndex == 8)
@@ -337,6 +340,14 @@ namespace ProyectoPedido
             }
             else
                 MessageBox.Show("Tienes que seleccionar un encargo primero.", "Ha ocurrido un error inesperado", MessageBoxButtons.OK, MessageBoxIcon.Error);
+        }
+
+        private void cmbMaterial_SelectedIndexChanged(object sender, EventArgs e)
+        {
+            if (cmbMaterial.SelectedIndex == 5)
+                txtMaterial.Visible = true;
+            else
+                txtMaterial.Visible = false;
         }
     }
 }

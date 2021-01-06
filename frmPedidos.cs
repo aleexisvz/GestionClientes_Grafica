@@ -36,6 +36,7 @@ namespace ProyectoPedido
             rtbModificar.Visible = false;
             label21.Visible = false;
             btnExecMod.Visible = false;
+            btnSearchFolder.Visible = false;
         }
 
         private void btnAgregarPedido_Click(object sender, EventArgs e)
@@ -150,10 +151,19 @@ namespace ProyectoPedido
                 case 7:
                     Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[11].Value.ToString();
                     rtbModificar.Text = Modd;
+                    btnSearchFolder.Visible = true;
                     break;
             }
 
             
+        }
+
+        private void btnSearchFolder_Click(object sender, EventArgs e)
+        {
+            if (fbdDirectorio.ShowDialog() == DialogResult.OK)
+            {
+                rtbModificar.Text = fbdDirectorio.SelectedPath;
+            }
         }
 
         private void btnExecMod_Click(object sender, EventArgs e)
@@ -193,8 +203,6 @@ namespace ProyectoPedido
                     Command = $"UPDATE Pedido SET directorio = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
                     break;
             }
-
-            MessageBox.Show(Command);
 
             //Creamos la conexión
             SqlConnection oSqlConn = new SqlConnection("Server=ALEXIS-PC; DataBase= ProyectoGrafica; Integrated Security= true;");
