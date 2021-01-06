@@ -15,6 +15,9 @@ namespace ProyectoPedido
     public partial class frmPedidos : Form
     {
         List<Entitys.Pedido> oList_Pedidos = new List<Entitys.Pedido>();
+        
+        string Command, Modd;
+        
 
         public frmPedidos()
         {
@@ -29,6 +32,10 @@ namespace ProyectoPedido
             {
                 dgvPedidos.DataSource = oList_Pedidos;
             }
+
+            rtbModificar.Visible = false;
+            label21.Visible = false;
+            btnExecMod.Visible = false;
         }
 
         private void btnAgregarPedido_Click(object sender, EventArgs e)
@@ -99,67 +106,104 @@ namespace ProyectoPedido
 
         private void btnModificar_Click(object sender, EventArgs e)
         {
-            //Creamos la conexión
-            SqlConnection oSqlConn = new SqlConnection("Server=ALEXIS-PC; DataBase= ProyectoGrafica; Integrated Security= true;");
-            string command = "";
+            label21.Visible = true;
+            rtbModificar.Visible = true;
+            btnExecMod.Visible = true;
 
-            //Seteamos el comando
-            switch(cmbCells.SelectedIndex)
+            switch (cmbCells.SelectedIndex)
             {
                 case 0:
-                    string idCliente = InputDialog.mostrar("Ingrese el ID del cliente:");
-
-                    command = $"UPDATE Pedido SET idCliente = '{idCliente}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[1].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
 
                 case 1:
-                    string usuario = InputDialog.mostrar("Ingrese el usuario:");
-
-                    command = $"UPDATE Pedido SET usuario = '{usuario}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[2].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
 
                 case 2:
-                    string producto = InputDialog.mostrar("Ingrese el producto:");
-
-                    command = $"UPDATE Pedido SET producto = '{producto}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[6].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
 
                 case 3:
-                    string encargo = InputDialog.mostrar("Ingrese el encargo:");
-
-                    command = $"UPDATE Pedido SET encargo = '{encargo}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[7].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
 
                 case 4:
-                    string observaciones = InputDialog.mostrar("Ingrese las observaciones:");
-
-                    command = $"UPDATE Pedido SET observaciones = '{observaciones}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[8].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
 
                 case 5:
-                    string monto = InputDialog.mostrar("Ingrese el monto:");
-
-                    command = $"UPDATE Pedido SET monto = '{monto}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[9].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
 
                 case 6:
-                    string deuda = InputDialog.mostrar("Ingrese la deuda:");
-
-                    command = $"UPDATE Pedido SET deuda = '{deuda}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[10].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
 
                 case 7:
-                    string directorio = InputDialog.mostrar("Ingrese el directorio:");
-
-                    command = $"UPDATE Pedido SET directorio = '{directorio}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    Modd = dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[11].Value.ToString();
+                    rtbModificar.Text = Modd;
                     break;
             }
+
+            
+        }
+
+        private void btnExecMod_Click(object sender, EventArgs e)
+        {
+            //Seteamos el comando
+            switch (cmbCells.SelectedIndex)
+            {
+                case 0:
+                    Command = $"UPDATE Pedido SET idCliente = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+
+                case 1:
+                    Command = $"UPDATE Pedido SET usuario = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+
+                case 2:
+                    Command = $"UPDATE Pedido SET producto = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+
+                case 3:
+                    Command = $"UPDATE Pedido SET encargo = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+
+                case 4:
+                    Command = $"UPDATE Pedido SET observaciones = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+
+                case 5:
+                    Command = $"UPDATE Pedido SET monto = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+
+                case 6:
+                    Command = $"UPDATE Pedido SET deuda = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+
+                case 7:
+                    Command = $"UPDATE Pedido SET directorio = '{rtbModificar.Text}' WHERE idPedido = {dgvPedidos.Rows[dgvPedidos.CurrentRow.Index].Cells[0].Value}";
+                    break;
+            }
+
+            MessageBox.Show(Command);
+
+            //Creamos la conexión
+            SqlConnection oSqlConn = new SqlConnection("Server=ALEXIS-PC; DataBase= ProyectoGrafica; Integrated Security= true;");
 
             //Ejecutamos el comando
             try
             {
                 oSqlConn.Open();
-                SqlCommand sqlCommand = new SqlCommand(command, oSqlConn);
+                SqlCommand sqlCommand = new SqlCommand(Command, oSqlConn);
                 sqlCommand.ExecuteNonQuery();
                 MessageBox.Show("Se ha actualizado correctamente.", "Operacion exitosa", MessageBoxButtons.OK, MessageBoxIcon.Information);
                 oSqlConn.Close();
